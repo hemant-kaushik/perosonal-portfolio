@@ -18,26 +18,29 @@ export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
     ];
 
     const renderNavItems = (isMobileView: boolean) => (
-        <div
-            className={`${isMobileView ? "flex flex-col items-center bg-white px-6 py-4 space-y-4 shadow-md" : "flex space-x-8"
-                }`}
-        >
-            {navItems.map((item) => (
-                <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={isMobileView ? () => setIsMenuOpen(false) : undefined}
-                    className={`text-lg font-medium ${isMobileView ? "text-gray-500" : "text-gray-800"
-                        } hover:text-blue-600 transition-all duration-300`}
-                >
-                    {item.label}
-                </a>
-            ))}
+        <div className={`${isMobileView ? "absolute top-full left-0 w-full z-40" : ""}`}>
+            <div
+                className={`${isMobileView ? "flex flex-col items-center bg-white px-6 py-4 space-y-4 shadow-md" : "flex space-x-8"
+                    }`}
+            >
+                {navItems.map((item) => (
+                    <a
+                        key={item.label}
+                        href={item.href}
+                        onClick={isMobileView ? () => setIsMenuOpen(false) : undefined}
+                        className={`text-lg font-medium ${isMobileView ? "text-gray-500" : "text-gray-800"
+                            } hover:text-blue-600 transition-all duration-300`}
+                    >
+                        {item.label}
+                    </a>
+                ))}
+            </div>
         </div>
+
     );
 
     return (
-        <div className="w-full border-b-[1px] border-gray-400 shadow-md bg-white transition-all duration-300">
+        <div className="w-full fixed top-0 left-0 z-50 border-b-[1px] border-gray-400 shadow-md bg-white transition-all duration-300">
             {isMobile ? (
                 <>
                     {/* Mobile Navigation */}
@@ -61,7 +64,7 @@ export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
                 </>
             ) : (
                 // Desktop Navigation
-                <div className="w-full flex justify-between items-center px-10 py-4">
+                    <div className="w-full flex justify-between gap-6 items-center px-[110px] py-4">
                     <div className="text-2xl font-extrabold text-gray-800">H</div>
                     {renderNavItems(false)}
                 </div>
