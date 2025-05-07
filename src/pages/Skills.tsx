@@ -18,7 +18,7 @@ export const Skills = () => {
             </div>
 
             {/* Technical Skills */}
-            <p className='text-lg text-gray-700'>A showcase of my technical expertise and professional capabilities.</p>
+            <p className='text-lg text-center text-gray-700 max-w-2xl mx-4'>A showcase of my technical expertise and professional capabilities.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mx-5 w-full lg:max-w-5xl md:max-w-3xl sm:max-w-xl mb-16">
                 {technicalSkills.map((skill, index) => (
                     <div
