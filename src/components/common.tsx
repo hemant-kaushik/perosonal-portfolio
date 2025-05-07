@@ -41,3 +41,29 @@ export const aboutSectionSkillsArray = [
         skills: ['C++', 'Data Structure & Algorithms', 'Git & GitHub'],
     },
 ]
+
+export const experiences = [
+    {
+        role: "Junior Software Developer & Engineer",
+        company: "Repozitory Technologies Pvt. Ltd.",
+        period: "Jan 2024 - Present",
+        description: [
+            `Developed and maintained a scalable web application using the MERN stack, called Wahbooks designed as an Accounting & Inventory Management Software for the Wholesale Pharmaceutical Market.`,
+            `Worked on a enterprise application, called OmniSync designed as an Accounting & Inventory Management Software for the Wholesale Steel Market.`,
+            `Optimized database queries resulting in 60% faster page loads and improved user experience.`,
+            `Collaborated with cross-functional teams to gather requirements and implement new features, enhancing user satisfaction by 30%.`,
+        ],
+        tools: ["React", "Tailwind", "TypeScript", "Node.js", "Express", "PostgreSQL", "Sequalize"],
+    },
+    {
+        role: "MERN Stack Developer Intern",
+        company: "Croxaint Digital Pvt. Ltd.",
+        period: "Oct 2022 - Jan 2023",
+        description: [
+            `Designed and implemented responsive web pages compatible across multiple browsers and devices.`,
+            `Collaborated with the design team to create user-friendly interfaces and improve user experience.`,
+            `Participated in code reviews and contributed to team knowledge sharing sessions.`,
+        ],
+        tools: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    },
+];
