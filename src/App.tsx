@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Experience } from './pages/Experience';
 import { Education } from './pages/Education';
+import { Skills } from './pages/Skills';
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -22,6 +23,7 @@ function App() {
       <About />
       <Experience />
       <Education />
+      <Skills />
     </>
   )
 }
