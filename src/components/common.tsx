@@ -67,3 +67,24 @@ export const experiences = [
         tools: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     },
 ];
+
+export const educationData = [
+    {
+        degree: "Bachelor of Technology in Computer Science",
+        institution: "Guru Jambheshwar University of Science & Technology, Hisar, Haryana",
+        year: "2020 - 2024",
+        description: "Graduated with distinction, focusing on web development, data structures and algorithms, and software engineering.",
+    },
+    {
+        degree: "Senior Secondary Education",
+        institution: "Aggarwal Public School, Ballabgarh, Faridabad, Haryana",
+        year: "2019 - 2020",
+        description: "I finished 12th grade with 93.6%, focusing on Physics, Chemistry, and Math.",
+    },
+    {
+        degree: "Secondary Education",
+        institution: "Aggarwal Public School, Ballabgarh, Faridabad, Haryana",
+        year: "2018 - 2019",
+        description: "I finished 10th grade with 88%, focusing on Science, Math, and English.",
+    },
+];
