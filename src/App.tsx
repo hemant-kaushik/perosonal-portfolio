@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
+import { Experience } from './pages/Experience';
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -18,6 +19,7 @@ function App() {
     <>
       <Home isMobile={isMobile} />
       <About />
+      <Experience />
     </>
   )
 }
