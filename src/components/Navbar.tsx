@@ -1,5 +1,6 @@
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,12 +10,12 @@ export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
     };
 
     const navItems = [
-        { label: 'Home', href: '/' },
-        { label: 'About', href: '/about' },
-        { label: 'Projects', href: '/projects' },
-        { label: 'Experience', href: '/experience' },
-        { label: 'Skills', href: '/skills' },
-        { label: 'Contact', href: '/contact' },
+        { label: 'Home', href: 'home' },
+        { label: 'About', href: 'about' },
+        { label: 'Experience', href: 'experience' },
+        { label: 'Education', href: 'education' },
+        { label: 'Skills', href: 'skills' },
+        { label: 'Contact', href: 'contact' },
     ];
 
     const renderNavItems = (isMobileView: boolean) => (
@@ -24,15 +25,19 @@ export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
                     }`}
             >
                 {navItems.map((item) => (
-                    <a
+                    <Link
                         key={item.label}
-                        href={item.href}
+                        to={item.href}
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        offset={-70}
                         onClick={isMobileView ? () => setIsMenuOpen(false) : undefined}
                         className={`text-lg font-medium ${isMobileView ? "text-gray-500" : "text-gray-800"
-                            } hover:text-blue-600 transition-all duration-300`}
+                            } hover:text-emerald-600 transition-all duration-300`}
                     >
                         {item.label}
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>
@@ -64,7 +69,7 @@ export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
                 </>
             ) : (
                 // Desktop Navigation
-                    <div className="w-full flex justify-between gap-6 items-center px-[110px] py-4">
+                <div className="w-full flex justify-between gap-6 items-center px-[110px] py-4">
                     <div className="text-2xl font-extrabold text-gray-800">H</div>
                     {renderNavItems(false)}
                 </div>

@@ -27,9 +27,9 @@ export const Button: React.FC<buttonProps> = ({
     const styleType = useMemo(() => {
         switch (buttonType) {
             case "fill":
-                return "bg-gradient-to-r from-emerald-500 to-teal-600 text-white";
+                return "bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:brightness-110 hover:shadow-lg";
             default:
-                return "bg-white border-[1px] border-solid border-gray-700 text-gray-800 font-medium";
+                return "bg-white border-[1px] border-solid border-gray-700 text-gray-800 font-medium hover:bg-gray-100 hover:shadow-md";
         }
     }, [buttonType]);
 
@@ -38,14 +38,15 @@ export const Button: React.FC<buttonProps> = ({
             type={type}
             id={id || ""}
             disabled={disable || isLoading}
-            className={
-                `flex flex-row items-center text-base font-medium justify-center cursor-pointer rounded-md px-4 py-2 !uppercase
+            className={`
+                flex flex-row items-center text-base font-medium justify-center cursor-pointer rounded-md px-4 py-2 uppercase
+                transition-all duration-300 ease-in-out transform 
                 ${(disable || isLoading)
-                    ? "opacity-60 !cursor-not-allowed"
-                    : "opacity-100"} 
-                ${isLoading ?
-                    '!bg-[#009196FF]'
-                    : ''} ${styleType} ${className}`}
+                    ? "opacity-60 cursor-not-allowed"
+                    : "opacity-100 hover:scale-[1.03]"} 
+                ${isLoading ? '!bg-[#009196FF]' : ''} 
+                ${styleType} ${className}
+            `}
             onClick={handleOnClick}
             {...rest}
         >
@@ -57,5 +58,5 @@ export const Button: React.FC<buttonProps> = ({
                 </>
             )}
         </button>
-    )
-}
+    );
+};
